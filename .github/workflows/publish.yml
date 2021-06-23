@@ -5,19 +5,7 @@ on:
     branches: master
 
 jobs:
-  test:
-    name: Test suite
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: bahmutov/npm-install@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "12"
-      - run: npm t
-
   version:
-    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -43,18 +31,8 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.changelog }}
 
-      - name: Create github Release
-        uses: actions/create-release@v1
-        if: ${{ steps.changelog.outputs.skipped == 'false' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.changelog.outputs.tag }}
-          release_name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
-
   publish-npm:
-    needs: [test, version]
+    needs: [version]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
