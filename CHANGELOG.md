@@ -3,7 +3,6 @@
 * chore: description ([fffda52](https://github.com/simonecorsi/fine/commit/fffda52))
 
 
-
 ## <small>1.0.4 (2021-06-23)</small>
 
 * chore(release): 1.0.4 ([cee88c8](https://github.com/simonecorsi/fine/commit/cee88c8))
