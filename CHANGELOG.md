@@ -1,6 +1,9 @@
-## <small>1.0.5 (2021-06-23)</small>
+## <small>1.0.6 (2021-06-23)</small>
 
 * chore: description ([fffda52](https://github.com/simonecorsi/fine/commit/fffda52))
+* chore: readme ([3a473d2](https://github.com/simonecorsi/fine/commit/3a473d2))
+* chore(release): 1.0.5 ([418781c](https://github.com/simonecorsi/fine/commit/418781c))
+
 
 
 ## <small>1.0.4 (2021-06-23)</small>
