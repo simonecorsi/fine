@@ -1,5 +1,12 @@
+## <small>1.0.4 (2021-06-23)</small>
+
+* ci: public npm ([06d0ff1](https://github.com/simonecorsi/fine/commit/06d0ff1))
+
+
+
 ## <small>1.0.3 (2021-06-23)</small>
 
+* chore(release): 1.0.3 ([0204370](https://github.com/simonecorsi/fine/commit/0204370))
 
 
 
