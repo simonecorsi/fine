@@ -1,5 +1,11 @@
+## <small>1.0.3 (2021-06-23)</small>
+
+
+
+
 ## <small>1.0.2 (2021-06-23)</small>
 
+* chore(release): 1.0.2 ([b4700d0](https://github.com/simonecorsi/fine/commit/b4700d0))
 * feat: fixed ci ([1852816](https://github.com/simonecorsi/fine/commit/1852816))
 
 

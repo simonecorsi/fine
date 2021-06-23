@@ -1,6 +1,6 @@
 {
   "name": "@scdev/fine",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generates flags for unix command from a key/value object",
   "main": "index.js",
   "bugs": {
