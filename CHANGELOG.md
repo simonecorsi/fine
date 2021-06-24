@@ -1,6 +1,13 @@
+## <small>1.0.8 (2021-06-24)</small>
+
+* feat: added option ([6cb9453](https://github.com/simonecorsi/fine/commit/6cb9453))
+
+
+
 ## <small>1.0.7 (2021-06-24)</small>
 
 * chore: removed bad ack from prev project ([9e7b5ce](https://github.com/simonecorsi/fine/commit/9e7b5ce))
+* chore(release): 1.0.7 ([8a88665](https://github.com/simonecorsi/fine/commit/8a88665))
 
 
 
@@ -23,13 +30,6 @@
 ## <small>1.0.3 (2021-06-23)</small>
 
 * chore(release): 1.0.3 ([0204370](https://github.com/simonecorsi/fine/commit/0204370))
-
-
-
-## <small>1.0.2 (2021-06-23)</small>
-
-* chore(release): 1.0.2 ([b4700d0](https://github.com/simonecorsi/fine/commit/b4700d0))
-* feat: fixed ci ([1852816](https://github.com/simonecorsi/fine/commit/1852816))
 
 
 
