@@ -2,18 +2,17 @@
 
 <!-- PROJECT SHIELDS -->
 
-![tests](https://github.com/simonecorsi/fine/workflows/test/badge.svg)
+<!-- ![tests](https://github.com/simonecorsi/fine/workflows/test/badge.svg) -->
 
 <!-- toc -->
 
-- [fine](#fine)
-  - [About The Project](#about-the-project)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Arguments](#arguments)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
+- [About The Project](#about-the-project)
+- [Installation](#installation)
+- [Usage](#usage)
+  * [Arguments](#arguments)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 <!-- tocstop -->
 
@@ -48,19 +47,19 @@ fine(
     redis.disconnect,
     () => {
       // custom logic
-      return db.disconnect()
-    }
+      return db.disconnect();
+    },
   ]
 );
 ```
 
 ### Arguments
 
-| parameter | type    | description                                                                 | default |
-| --------- | ------- | --------------------------------------------------------------------------- | ------- |
-| opts       | Object  | Options object                                 | {}   |
-| opts.timeout       | Number  | The time before exiting the process                                 | 2000   |
-| closeFunctions | function[] | Collection of callback for custom closing events, eg: db.disconnect()  | |
+| parameter      | type       | description                                                           | default |
+| -------------- | ---------- | --------------------------------------------------------------------- | ------- |
+| opts           | Object     | Options object                                                        | {}      |
+| opts.timeout   | Number     | The time before exiting the process                                   | 2000    |
+| closeFunctions | function[] | Collection of callback for custom closing events, eg: db.disconnect() |         |
 
 <!-- CONTRIBUTING -->
 
