@@ -1,7 +1,14 @@
+## <small>1.0.11 (2021-06-24)</small>
+
+* ci: installing deps before publish ([27226f1](https://github.com/simonecorsi/fine/commit/27226f1))
+
+
+
 ## <small>1.0.10 (2021-06-24)</small>
 
-* ci: add is-ci ([147f1fb](https://github.com/simonecorsi/fine/commit/147f1fb))
 * chore: update readme [skip ci] ([f252a25](https://github.com/simonecorsi/fine/commit/f252a25))
+* chore(release): 1.0.10 ([8928e06](https://github.com/simonecorsi/fine/commit/8928e06))
+* ci: add is-ci ([147f1fb](https://github.com/simonecorsi/fine/commit/147f1fb))
 
 
 
@@ -24,15 +31,6 @@
 
 * chore: removed bad ack from prev project ([9e7b5ce](https://github.com/simonecorsi/fine/commit/9e7b5ce))
 * chore(release): 1.0.7 ([8a88665](https://github.com/simonecorsi/fine/commit/8a88665))
-
-
-
-## <small>1.0.6 (2021-06-23)</small>
-
-* chore: description ([fffda52](https://github.com/simonecorsi/fine/commit/fffda52))
-* chore: readme ([3a473d2](https://github.com/simonecorsi/fine/commit/3a473d2))
-* chore(release): 1.0.5 ([418781c](https://github.com/simonecorsi/fine/commit/418781c))
-* chore(release): 1.0.6 ([748d433](https://github.com/simonecorsi/fine/commit/748d433))
 
 
 
