@@ -14,7 +14,6 @@
   - [Contributing](#contributing)
   - [License](#license)
   - [Contact](#contact)
-  - [Acknowledgements](#acknowledgements)
 
 <!-- tocstop -->
 
@@ -80,10 +79,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Simone Corsi - [@im_simonecorsi](https://twitter.com/im_simonecorsi)
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## Acknowledgements
-
-- [malcommac](https://github.com/malcommac) - for inspiration after seeing his string concatenations
-- [jonschlinkert](https://github.com/jonschlinkert) - for his [dashify](https://github.com/jonschlinkert/dashify) function
