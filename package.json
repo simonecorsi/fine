@@ -31,8 +31,8 @@
   "author": "Simone Corsi <simonecorsi.dev@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "cz-conventional-changelog": "^3.1.0",
     "eslint": "^7.1.0",
     "eslint-config-prettier": "^6.11.0",
