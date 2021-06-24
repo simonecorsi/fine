@@ -1,5 +1,13 @@
+## <small>1.0.9 (2021-06-24)</small>
+
+* build(husky): upgrade to 6 ([435bb7f](https://github.com/simonecorsi/fine/commit/435bb7f))
+* fixes: vulnerability ([5037c28](https://github.com/simonecorsi/fine/commit/5037c28))
+
+
+
 ## <small>1.0.8 (2021-06-24)</small>
 
+* chore(release): 1.0.8 ([0bc45bf](https://github.com/simonecorsi/fine/commit/0bc45bf))
 * feat: added option ([6cb9453](https://github.com/simonecorsi/fine/commit/6cb9453))
 
 
@@ -24,12 +32,6 @@
 
 * chore(release): 1.0.4 ([cee88c8](https://github.com/simonecorsi/fine/commit/cee88c8))
 * ci: public npm ([06d0ff1](https://github.com/simonecorsi/fine/commit/06d0ff1))
-
-
-
-## <small>1.0.3 (2021-06-23)</small>
-
-* chore(release): 1.0.3 ([0204370](https://github.com/simonecorsi/fine/commit/0204370))
 
 
 
