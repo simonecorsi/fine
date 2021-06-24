@@ -19,13 +19,9 @@
 
 ## About The Project
 
-This packages aim is to simplify programmatically generate flags to use in Unix-style command by declaring them with an object literal and turning them into an array or a string of usable flags.
+The purpose of this package is gracefully exiting Node.js processes the "good way" (opinated clearly), while also providing some minir extendability!
 
-Here's why:
-
-- You exec/spawn commands and need to provide options
-- You want to dynamically add flags without bunch of string concats
-- you don't want to have an headache refactoring when needed
+This package also takes an array of callbacks that will get executed serially to allow closing user defined resource, eg: a database connection.
 
 <!-- GETTING STARTED -->
 
@@ -43,7 +39,19 @@ npm i @scdev/fine
 
 ```js
 const fine = require("@scdev/fine");
-fine({ timeout: 2000 }, [() => db.disconnect()]);
+fine(
+  {
+    timeout: 2000,
+    catchPromisesReject: true,
+  },
+  [
+    redis.disconnect,
+    () => {
+      // custom logic
+      return db.disconnect()
+    }
+  ]
+);
 ```
 
 ### Arguments

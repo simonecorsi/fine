@@ -10,19 +10,20 @@ module.exports = (opts = {}, closeFunctions = []) => {
   const options = Object.assign(
     {
       timeout: 2000,
+      catchPromisesReject: true,
     },
     opts
   );
 
-  for (const sig of [
-    "SIGINT",
-    "SIGTERM",
-    "uncaughtException",
-    "unhandledRejection",
-  ]) {
-    process.once(sig, () => {
-      const code = sig.match("^SIG") ? 0 : 1;
-      process.stdout.write(`[${sig}] exiting with code ${code}\n`);
+  let events = ["SIGINT", "SIGTERM", "uncaughtException"];
+
+  if (options.catchPromisesReject) {
+    events.push("unhandledRejection");
+  }
+  for (const event of events) {
+    process.once(event, () => {
+      const code = event.match("^SIG") ? 0 : 1;
+      process.stdout.write(`[${event}] exiting with code ${code}\n`);
       if (Array.isArray(closeFunctions)) {
         for (const cb of closeFunctions) {
           try {
