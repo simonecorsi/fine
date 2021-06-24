@@ -49,5 +49,8 @@
   },
   "scripts": {
     "prepare": "is-ci || husky install"
+  },
+  "dependencies": {
+    "is-ci": "^3.0.0"
   }
 }
