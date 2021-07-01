@@ -6,14 +6,13 @@
 
 <!-- toc -->
 
-- [fine](#fine)
-  - [About The Project](#about-the-project)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Arguments](#arguments)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
+- [About The Project](#about-the-project)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Arguments](#arguments)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 <!-- tocstop -->
 
@@ -40,15 +39,14 @@ npm i @scdev/fine
 ```js
 const fine = require("@scdev/fine");
 fine(
-  {
-    timeout: 2000,
-    events: ["SIGINT", "SIGTERM", "uncaughtException", "unhandledRejection"],
-  },
+  2000,
+  ["SIGINT", "SIGTERM", "uncaughtException", "unhandledRejection"],
   [
     redis.disconnect,
-    () => {
-      // custom logic
-      return db.disconnect();
+    async () => {
+      await db.disconnect();
+      // some more logic
+      return "ok";
     },
   ]
 );
