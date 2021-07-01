@@ -6,38 +6,55 @@ const {
 
 const NOOP = () => undefined;
 
-module.exports = (opts = {}, closeFunctions = []) => {
-  const options = Object.assign(
-    {
-      timeout: 2000,
-      catchPromisesReject: true,
-    },
-    opts
-  );
+const DEFAULT_EVENTS = [
+  "SIGINT",
+  "SIGTERM",
+  "uncaughtException",
+  "unhandledRejection",
+];
 
-  let events = ["SIGINT", "SIGTERM", "uncaughtException"];
-
-  if (options.catchPromisesReject) {
-    events.push("unhandledRejection");
+function validateParameters(timeout, events, callbacks) {
+  if (typeof timeout !== "number") {
+    throw new TypeError("timeout parameter must be number");
   }
+  if (!Array.isArray(events)) {
+    throw new TypeError("events parameter must be an array of strings");
+  }
+
+  if (!Array.isArray(callbacks)) {
+    throw new TypeError("callbacks parameter must be an array of functions");
+  } else {
+    callbacks.map((cb) => {
+      if (typeof cb !== "function") {
+        throw new TypeError("callback must be a function");
+      }
+    });
+  }
+}
+
+module.exports = function fine(
+  timeout = 2000,
+  events = DEFAULT_EVENTS,
+  callbacks = []
+) {
+  validateParameters(timeout, events, callbacks);
+
   for (const event of events) {
     process.once(event, () => {
       const code = event.match("^SIG") ? 0 : 1;
       process.stdout.write(`[${event}] exiting with code ${code}\n`);
-      if (Array.isArray(closeFunctions)) {
-        for (const cb of closeFunctions) {
-          try {
-            if (typeof cb === "function") {
-              const p = cb();
-              if (isPromise(p)) p.catch(NOOP);
-            }
-            // eslint-disable-next-line no-empty
-          } catch (_) {}
-        }
+      for (const cb of callbacks) {
+        try {
+          if (typeof cb === "function") {
+            const p = cb();
+            if (isPromise(p)) p.catch(NOOP);
+          }
+          // eslint-disable-next-line no-empty
+        } catch (_) {}
       }
       setTimeout(() => {
         process.exit(code);
-      }, options.timeout).unref();
+      }, timeout);
     });
   }
 };

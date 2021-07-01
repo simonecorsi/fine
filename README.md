@@ -6,13 +6,14 @@
 
 <!-- toc -->
 
-- [About The Project](#about-the-project)
-- [Installation](#installation)
-- [Usage](#usage)
-  * [Arguments](#arguments)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [fine](#fine)
+  - [About The Project](#about-the-project)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Arguments](#arguments)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
 
 <!-- tocstop -->
 
@@ -41,7 +42,7 @@ const fine = require("@scdev/fine");
 fine(
   {
     timeout: 2000,
-    catchPromisesReject: true,
+    events: ["SIGINT", "SIGTERM", "uncaughtException", "unhandledRejection"],
   },
   [
     redis.disconnect,
@@ -55,11 +56,11 @@ fine(
 
 ### Arguments
 
-| parameter      | type       | description                                                           | default |
-| -------------- | ---------- | --------------------------------------------------------------------- | ------- |
-| opts           | Object     | Options object                                                        | {}      |
-| opts.timeout   | Number     | The time before exiting the process                                   | 2000    |
-| closeFunctions | function[] | Collection of callback for custom closing events, eg: db.disconnect() |         |
+| parameter   | type       | description                                                           | default                                                            |
+| ----------- | ---------- | --------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `timeout`   | Number     | The time before exiting the process                                   | `2000`                                                             |
+| `events`    | string[]   | The events the process will listen on                                 | `["SIGINT", "SIGTERM", "uncaughtException", "unhandledRejection"]` |
+| `callbacks` | function[] | Collection of callback for custom closing events, eg: db.disconnect() | `[]`                                                               |
 
 <!-- CONTRIBUTING -->
 
