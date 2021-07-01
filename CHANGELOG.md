@@ -1,5 +1,12 @@
+## <small>1.0.12 (2021-07-01)</small>
+
+* feat!: reworked options ([8d922c2](https://github.com/simonecorsi/fine/commit/8d922c2))
+
+
+
 ## <small>1.0.11 (2021-06-24)</small>
 
+* chore(release): 1.0.11 ([21d2855](https://github.com/simonecorsi/fine/commit/21d2855))
 * ci: installing deps before publish ([27226f1](https://github.com/simonecorsi/fine/commit/27226f1))
 
 
@@ -24,13 +31,6 @@
 
 * chore(release): 1.0.8 ([0bc45bf](https://github.com/simonecorsi/fine/commit/0bc45bf))
 * feat: added option ([6cb9453](https://github.com/simonecorsi/fine/commit/6cb9453))
-
-
-
-## <small>1.0.7 (2021-06-24)</small>
-
-* chore: removed bad ack from prev project ([9e7b5ce](https://github.com/simonecorsi/fine/commit/9e7b5ce))
-* chore(release): 1.0.7 ([8a88665](https://github.com/simonecorsi/fine/commit/8a88665))
 
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@scdev/fine",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Gracefully exit Node.js process",
   "main": "index.js",
   "bugs": {
