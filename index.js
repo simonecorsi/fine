@@ -32,14 +32,17 @@ function validateParameters(timeout, events, callbacks) {
   }
 }
 
-module.exports = function fine(
-  timeout = 2000,
-  events = DEFAULT_EVENTS,
-  callbacks = []
-) {
-  validateParameters(timeout, events, callbacks);
+const DEFAULT_OPTS = {
+  timeout: 2000,
+  events: DEFAULT_EVENTS,
+};
 
-  for (const event of events) {
+module.exports = function fine(callbacks = [], opts = {}) {
+  const options = Object.assign({}, DEFAULT_OPTS, opts);
+
+  validateParameters(options.timeout, options.events, callbacks);
+
+  for (const event of options.events) {
     if (process.listenerCount(event) > 0) {
       throw new Error(`A ${event} handler is already registered`);
     }
@@ -57,7 +60,7 @@ module.exports = function fine(
       }
       setTimeout(() => {
         process.exit(code);
-      }, timeout);
+      }, options.timeout);
     });
   }
 };
