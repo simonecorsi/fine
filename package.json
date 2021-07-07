@@ -38,6 +38,7 @@
     "lint-staged": "^10.2.1",
     "markdown-toc": "^1.2.0",
     "prettier": "^2.0.5",
+    "is-ci": "^3.0.0",
     "typescript": "^4.3.5"
   },
   "volta": {
@@ -47,8 +48,5 @@
   "scripts": {
     "prepare": "is-ci || husky install",
     "types": "tsc --allowJs -d --emitDeclarationOnly index.js"
-  },
-  "dependencies": {
-    "is-ci": "^3.0.0"
   }
 }

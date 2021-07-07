@@ -12,6 +12,9 @@ jobs:
         with:
           node-version: 14
 
+      # because husky.
+      - run: npm ci
+
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -25,8 +28,6 @@ jobs:
           git-message: "chore(release): {version} [skip ci]"
           tag-prefix: ""
 
-      # because husky.
-      - run: npm ci
       - name: NPM Publish
         uses: JS-DevTools/npm-publish@v1
         with:
