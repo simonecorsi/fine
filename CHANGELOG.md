@@ -1,3 +1,10 @@
+### [1.1.1](https://github.com/simonecorsi/fine/compare/1.1.0...1.1.1) (2021-07-07)
+
+
+### Bug Fixes
+
+* ci ([b0ee8bc](https://github.com/simonecorsi/fine/commit/b0ee8bcc196fb63f9511d6bc560213a412a0a715))
+
 ## [1.1.0](https://github.com/simonecorsi/fine/compare/1.0.13...1.1.0) (2021-07-07)
 
 
@@ -29,6 +36,4 @@
 * reworked options ([8d922c2](https://github.com/simonecorsi/fine/commit/8d922c21ca3aa341f3aae8c2dbd24eb1eba0d6dc))
 
 ### [1.0.11](https://github.com/simonecorsi/fine/compare/1.0.10...1.0.11) (2021-06-24)
-
-### [1.0.10](https://github.com/simonecorsi/fine/compare/1.0.9...1.0.10) (2021-06-24)
 
