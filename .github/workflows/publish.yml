@@ -31,15 +31,11 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.changelog }}
 
-  publish-npm:
-    needs: [version]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Publish on npm
+        needs: [version]
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: npm ci && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+        run: npm ci && npm publish --access public
