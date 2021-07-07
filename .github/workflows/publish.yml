@@ -25,6 +25,14 @@ jobs:
           git-message: "chore(release): {version} [skip ci]"
           tag-prefix: ""
 
+      # because husky.
+      - run: npm ci
+      - name: NPM Publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.npm_token }}
+          access: "public"
+
       - name: Create github Release
         uses: actions/create-release@master
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
@@ -34,12 +42,3 @@ jobs:
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.changelog }}
-
-      # because husky.
-      - run: npm ci
-      - name: NPM Publish
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.npm_token }}
-          access: "public"
-          tag: ${{ steps.changelog.outputs.tag }}
