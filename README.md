@@ -6,14 +6,13 @@
 
 <!-- toc -->
 
-- [fine](#fine)
-  - [About The Project](#about-the-project)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Arguments](#arguments)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
+- [About The Project](#about-the-project)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Arguments](#arguments)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 <!-- tocstop -->
 
@@ -56,6 +55,10 @@ fine(
 ```
 
 ### Arguments
+
+```js
+fine(callbacks, options);
+```
 
 | parameter         | type       | description                                                           | default                                                            |
 | ----------------- | ---------- | --------------------------------------------------------------------- | ------------------------------------------------------------------ |
