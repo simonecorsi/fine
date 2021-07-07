@@ -12,12 +12,12 @@ jobs:
         with:
           node-version: 14
 
-      # because husky.
-      - run: npm ci
-
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      # because husky.
+      - run: npm ci
 
       - name: Bump version and push tag
         id: changelog
