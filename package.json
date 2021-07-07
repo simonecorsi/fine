@@ -3,29 +3,25 @@
   "version": "1.1.0",
   "description": "Gracefully exit Node.js process",
   "main": "index.js",
+  "types": "index.d.ts",
   "bugs": {
     "url": "https://github.com/simonecorsi/fine/issues"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "keywords": [
     "nodejs",
     "npm",
     "javascript",
-    "stringify",
-    "argv",
-    "opt",
-    "flag",
-    "command",
-    "parser",
-    "option parser",
-    "options"
+    "graceful",
+    "shutdown",
+    "process exit",
+    "exit",
+    "clear exit",
+    "gracefully",
+    "graceful shutdown",
+    "process shutdown"
   ],
   "homepage": "https://github.com/simonecorsi/fine",
   "author": "Simone Corsi <simonecorsi.dev@gmail.com>",
@@ -41,14 +37,16 @@
     "husky": "^6.0.0",
     "lint-staged": "^10.2.1",
     "markdown-toc": "^1.2.0",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "typescript": "^4.3.5"
   },
   "volta": {
     "node": "14.17.1",
     "npm": "7.18.1"
   },
   "scripts": {
-    "prepare": "is-ci || husky install"
+    "prepare": "is-ci || husky install",
+    "types": "tsc --allowJs -d --emitDeclarationOnly index.js"
   },
   "dependencies": {
     "is-ci": "^3.0.0"

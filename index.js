@@ -6,6 +6,9 @@ const {
 
 const NOOP = () => undefined;
 
+/**
+ * @typedef {Array<"SIGINT" | "SIGTERM" | "uncaughtException" | "unhandledRejection">} ProcessEvents
+ */
 const DEFAULT_EVENTS = [
   "SIGINT",
   "SIGTERM",
@@ -13,6 +16,21 @@ const DEFAULT_EVENTS = [
   "unhandledRejection",
 ];
 
+/**
+ * @typedef {object} FineOptions
+ * @prop {number} timeout
+ * @prop {ProcessEvents} events
+ */
+const DEFAULT_OPTS = {
+  timeout: 2000,
+  events: DEFAULT_EVENTS,
+};
+
+/**
+ * @param {number} timeout
+ * @param {ProcessEvents} events
+ * @param {Array<() => any>} callbacks
+ */
 function validateParameters(timeout, events, callbacks) {
   if (typeof timeout !== "number") {
     throw new TypeError("timeout parameter must be number");
@@ -31,13 +49,15 @@ function validateParameters(timeout, events, callbacks) {
     });
   }
 }
+exports.validateParameters = validateParameters;
 
-const DEFAULT_OPTS = {
-  timeout: 2000,
-  events: DEFAULT_EVENTS,
-};
-
-module.exports = function fine(callbacks = [], opts = {}) {
+/**
+ *
+ *
+ * @param {Array<() => any>} [callbacks=[]]
+ * @param {FineOptions} [opts={}]
+ */
+function fine(callbacks = [], opts = {}) {
   const options = Object.assign({}, DEFAULT_OPTS, opts);
 
   validateParameters(options.timeout, options.events, callbacks);
@@ -63,4 +83,6 @@ module.exports = function fine(callbacks = [], opts = {}) {
       }, options.timeout);
     });
   }
-};
+}
+
+module.exports = fine;
