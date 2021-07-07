@@ -8,6 +8,10 @@ jobs:
   version:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -31,7 +35,9 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.changelog }}
 
-      - name: Publish on npm
+      # because husky.
+      - run: npm set-script prepare ""
+      - name: NPM Publish
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.npm_token }}
