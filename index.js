@@ -40,6 +40,9 @@ module.exports = function fine(
   validateParameters(timeout, events, callbacks);
 
   for (const event of events) {
+    if (process.listenerCount(event) > 0) {
+      throw new Error(`A ${event} handler is already registered`);
+    }
     process.once(event, () => {
       const code = event.match("^SIG") ? 0 : 1;
       process.stdout.write(`[${event}] exiting with code ${code}\n`);
