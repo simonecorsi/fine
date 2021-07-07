@@ -36,7 +36,7 @@ jobs:
           body: ${{ steps.changelog.outputs.changelog }}
 
       # because husky.
-      - run: npm set-script prepare ""
+      - run: npm ci
       - name: NPM Publish
         uses: JS-DevTools/npm-publish@v1
         with:
