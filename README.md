@@ -6,13 +6,14 @@
 
 <!-- toc -->
 
-- [About The Project](#about-the-project)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Arguments](#arguments)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [fine](#fine)
+  - [About The Project](#about-the-project)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Arguments](#arguments)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
 
 <!-- tocstop -->
 
@@ -39,8 +40,6 @@ npm i @scdev/fine
 ```js
 const fine = require("@scdev/fine");
 fine(
-  2000,
-  ["SIGINT", "SIGTERM", "uncaughtException", "unhandledRejection"],
   [
     redis.disconnect,
     async () => {
@@ -48,17 +47,21 @@ fine(
       // some more logic
       return "ok";
     },
-  ]
+  ],
+  {
+    timeout: 2000,
+    events: ["SIGINT", "SIGTERM", "uncaughtException", "unhandledRejection"],
+  }
 );
 ```
 
 ### Arguments
 
-| parameter   | type       | description                                                           | default                                                            |
-| ----------- | ---------- | --------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| `timeout`   | Number     | The time before exiting the process                                   | `2000`                                                             |
-| `events`    | string[]   | The events the process will listen on                                 | `["SIGINT", "SIGTERM", "uncaughtException", "unhandledRejection"]` |
-| `callbacks` | function[] | Collection of callback for custom closing events, eg: db.disconnect() | `[]`                                                               |
+| parameter         | type       | description                                                           | default                                                            |
+| ----------------- | ---------- | --------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `callbacks`       | function[] | Collection of callback for custom closing events, eg: db.disconnect() | `[]`                                                               |
+| `options.timeout` | Number     | The time before exiting the process                                   | `2000`                                                             |
+| `options.events`  | string[]   | The events the process will listen on                                 | `["SIGINT", "SIGTERM", "uncaughtException", "unhandledRejection"]` |
 
 <!-- CONTRIBUTING -->
 
