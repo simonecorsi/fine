@@ -32,10 +32,8 @@ jobs:
           body: ${{ steps.changelog.outputs.changelog }}
 
       - name: Publish on npm
-        uses: actions/setup-node@v1
-        run: npm ci && npm publish --access public
+        uses: JS-DevTools/npm-publish@v1
         with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          token: ${{ secrets.npm_token }}
+          access: "public"
+          tag: ${{ steps.changelog.outputs.tag }}
