@@ -16,10 +16,10 @@ jobs:
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          git-message: "chore(release): {version}"
+          preset: "conventionalcommits"
+          github-token: ${{ secrets.GH_PESONAL_TOKEN }}
+          git-message: "chore(release): {version} [skip ci]"
           tag-prefix: ""
-          preset: ""
 
       - name: Create github Release
         uses: actions/create-release@master
