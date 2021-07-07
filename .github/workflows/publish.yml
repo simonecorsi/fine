@@ -32,7 +32,6 @@ jobs:
           body: ${{ steps.changelog.outputs.changelog }}
 
       - name: Publish on npm
-        needs: [version]
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
