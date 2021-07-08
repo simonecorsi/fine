@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/simonecorsi/fine/compare/1.1.1...1.2.0) (2021-07-08)
+
+
+### Features
+
+* **timeout:** optional unref ([83ef086](https://github.com/simonecorsi/fine/commit/83ef086f3c374f34d8741ac2674c6bd5e6b25a24))
+
 ### [1.1.1](https://github.com/simonecorsi/fine/compare/1.1.0...1.1.1) (2021-07-07)
 
 
@@ -34,6 +41,4 @@
 ### Features
 
 * reworked options ([8d922c2](https://github.com/simonecorsi/fine/commit/8d922c21ca3aa341f3aae8c2dbd24eb1eba0d6dc))
-
-### [1.0.11](https://github.com/simonecorsi/fine/compare/1.0.10...1.0.11) (2021-06-24)
 
