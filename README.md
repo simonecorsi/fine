@@ -6,13 +6,14 @@
 
 <!-- toc -->
 
-- [About The Project](#about-the-project)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Arguments](#arguments)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [fine](#fine)
+  - [About The Project](#about-the-project)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Arguments](#arguments)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
 
 <!-- tocstop -->
 
@@ -65,6 +66,7 @@ fine(callbacks, options);
 | `callbacks`       | function[] | Collection of callback for custom closing events, eg: db.disconnect() | `[]`                                                               |
 | `options.timeout` | Number     | The time before exiting the process                                   | `2000`                                                             |
 | `options.events`  | string[]   | The events the process will listen on                                 | `["SIGINT", "SIGTERM", "uncaughtException", "unhandledRejection"]` |
+| `options.unref`   | boolean    | Should the timeout keep the process alive or not                      | `false`                                                            |
 
 <!-- CONTRIBUTING -->
 

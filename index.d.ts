@@ -12,6 +12,7 @@ declare namespace fine {
 type FineOptions = {
     timeout: number;
     events: ProcessEvents;
+    unref: boolean;
 };
 /**
  * @param {number} timeout

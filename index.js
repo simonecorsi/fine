@@ -20,10 +20,12 @@ const DEFAULT_EVENTS = [
  * @typedef {object} FineOptions
  * @prop {number} timeout
  * @prop {ProcessEvents} events
+ * @prop {boolean} unref
  */
 const DEFAULT_OPTS = {
   timeout: 2000,
   events: DEFAULT_EVENTS,
+  unref: false,
 };
 
 /**
@@ -68,6 +70,13 @@ function fine(callbacks = [], opts = {}) {
     }
     process.once(event, () => {
       const code = event.match("^SIG") ? 0 : 1;
+
+      const t = setTimeout(() => {
+        process.exit(code);
+      }, options.timeout);
+
+      if (options.unref) t.unref();
+
       process.stdout.write(`[${event}] exiting with code ${code}\n`);
       for (const cb of callbacks) {
         try {
@@ -78,9 +87,6 @@ function fine(callbacks = [], opts = {}) {
           // eslint-disable-next-line no-empty
         } catch (_) {}
       }
-      setTimeout(() => {
-        process.exit(code);
-      }, options.timeout);
     });
   }
 }
