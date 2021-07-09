@@ -17,7 +17,7 @@
 
 <!-- tocstop -->
 
-## About The Project
+## About
 
 The purpose of this package is gracefully exiting Node.js processes the "good way" (opinated clearly), while also providing some minir extendability!
 
