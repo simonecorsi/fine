@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/simonecorsi/fine/compare/1.2.0...1.3.0) (2021-12-17)
+
+
+### Features
+
+* allowDuplicateHandlers ([f0c71cb](https://github.com/simonecorsi/fine/commit/f0c71cba68186cebdbc4b5602d9da32d8462068a))
+
 ## [1.2.0](https://github.com/simonecorsi/fine/compare/1.1.1...1.2.0) (2021-07-08)
 
 
@@ -30,15 +37,4 @@
 ### Documentation
 
 * updated readme example ([97e611e](https://github.com/simonecorsi/fine/commit/97e611ec9fdcba56c3cd174ae0f4de1e7af88a51))
-
-### [1.0.12](https://github.com/simonecorsi/fine/compare/1.0.11...1.0.12) (2021-07-01)
-
-
-### ⚠ BREAKING CHANGES
-
-* reworked options
-
-### Features
-
-* reworked options ([8d922c2](https://github.com/simonecorsi/fine/commit/8d922c21ca3aa341f3aae8c2dbd24eb1eba0d6dc))
 
