@@ -21,11 +21,13 @@ const DEFAULT_EVENTS = [
  * @prop {number} timeout
  * @prop {ProcessEvents} events
  * @prop {boolean} unref
+ * @prop {boolean} allowDuplicateHandlers
  */
 const DEFAULT_OPTS = {
   timeout: 2000,
   events: DEFAULT_EVENTS,
   unref: false,
+  allowDuplicateHandlers: true,
 };
 
 /**
@@ -65,9 +67,10 @@ function fine(callbacks = [], opts = {}) {
   validateParameters(options.timeout, options.events, callbacks);
 
   for (const event of options.events) {
-    if (process.listenerCount(event) > 0) {
+    if (!options.allowDuplicateHandlers && process.listenerCount(event) > 0) {
       throw new Error(`A ${event} handler is already registered`);
     }
+
     process.once(event, () => {
       const code = event.match("^SIG") ? 0 : 1;
 

@@ -13,6 +13,7 @@ type FineOptions = {
     timeout: number;
     events: ProcessEvents;
     unref: boolean;
+    allowDuplicateHandlers: boolean;
 };
 /**
  * @param {number} timeout
