@@ -27,9 +27,15 @@
   "author": "Simone Corsi <simonecorsi.dev@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@saithodev/semantic-release-backmerge": "^2.0.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/commit-analyzer": "^9.0.1",
+    "@semantic-release/git": "^10.0.0",
+    "@semantic-release/github": "^8.0.1",
+    "@semantic-release/npm": "^8.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.2",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
-    "cz-conventional-changelog": "^3.1.0",
     "eslint": "^7.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-node": "^11.1.0",
@@ -46,7 +52,7 @@
     "npm": "7.18.1"
   },
   "scripts": {
-    "prepare": "is-ci || husky install",
+    "prepare": "node prepare.js || echo 'Skipping prepare'",
     "types": "tsc --allowJs -d --emitDeclarationOnly index.js"
   }
 }
