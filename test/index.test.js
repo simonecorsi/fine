@@ -1,3 +1,3 @@
 const tap = require("tap");
 
-tap.todo("TODO");
+tap.test("TODO", (t) => t.end());
