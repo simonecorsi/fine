@@ -4,26 +4,24 @@
 
 <!-- ![tests](https://github.com/simonecorsi/fine/workflows/test/badge.svg) -->
 
-<!-- toc -->
-
-- [fine](#fine)
-  - [About The Project](#about-the-project)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Arguments](#arguments)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
-
-<!-- tocstop -->
-
 ## About
 
 The purpose of this package is helping in gracefully shutdown Node.js applications the "good way" (opinated clearly), while also providing some minor extendability!
 
 This package also takes an array of callbacks that will get executed serially to allow closing user defined resource, eg: a database connection.
 
-<!-- GETTING STARTED -->
+## Table of contents
+
+<!-- toc -->
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Arguments](#arguments)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+<!-- tocstop -->
 
 ## Installation
 
