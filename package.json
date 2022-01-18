@@ -34,7 +34,7 @@
     "@semantic-release/github": "^8.0.1",
     "@semantic-release/npm": "^8.0.2",
     "@semantic-release/release-notes-generator": "^10.0.2",
-    "@commitlint/cli": "^12.1.4",
+    "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^16.0.0",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
