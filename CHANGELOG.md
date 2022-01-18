@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/simonecorsi/fine/compare/v1.3.0...v1.4.0) (2022-01-18)
+
+
+### Features
+
+* new release system ([8e9f24d](https://github.com/simonecorsi/fine/commit/8e9f24d75712a7bdef998e899d8b48619e1b866c))
+
 ## [1.3.0](https://github.com/simonecorsi/fine/compare/1.2.0...1.3.0) (2021-12-17)
 
 
@@ -37,4 +44,3 @@
 ### Documentation
 
 * updated readme example ([97e611e](https://github.com/simonecorsi/fine/commit/97e611ec9fdcba56c3cd174ae0f4de1e7af88a51))
-
