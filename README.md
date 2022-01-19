@@ -8,9 +8,9 @@
 
 ## About
 
-Zero dependency and opinated package that gracefully shutdown Node.js applications the right way!
+Zero dependency and opinionaned package that gracefully shutdown Node.js applications.
 
-It provides extendability by taking an array of callbacks that will be executed serially to allow closing user defined resource, eg: a database connection, drain streams, etc; before timeout exits the main process.
+It provides extendability by taking an array of callbacks that will be executed serially to allow closing user-defined resources, eg: a database connection, drain streams, etc; before timeout exits the main process.
 
 ## Table of contents
 
