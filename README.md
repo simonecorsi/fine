@@ -4,11 +4,13 @@
 
 <!-- ![tests](https://github.com/simonecorsi/fine/workflows/test/badge.svg) -->
 
+> "Fine" means "End" in Italian, [fì-ne] Cessazione definitiva, punto estremo, nello spazio e nel tempo di qualcosa.
+
 ## About
 
-The purpose of this package is helping in gracefully shutdown Node.js applications the "good way" (opinated clearly), while also providing some minor extendability!
+Zero dependency and opinated package that gracefully shutdown Node.js applications the right way!
 
-This package also takes an array of callbacks that will get executed serially to allow closing user defined resource, eg: a database connection.
+It provides extendability by taking an array of callbacks that will be executed serially to allow closing user defined resource, eg: a database connection, drain streams, etc; before timeout exits the main process.
 
 ## Table of contents
 
@@ -41,9 +43,7 @@ fine(
   [
     redis.disconnect,
     async () => {
-      await db.disconnect();
-      // some more logic
-      return "ok";
+      await db.disconnect(); // Throws will be NOOP-ed
     },
   ],
   {
@@ -70,9 +70,9 @@ fine(callbacks, options);
 
 ## Contributing
 
-Project is pretty simple and straight forward for what is my needs, but if you have any idea you're welcome.
+Project is pretty simple and straight forward for what is my needs, but if you have any idea you're welcome!
 
-This projects uses [commitizen](https://github.com/commitizen/cz-cli) so be sure to use standard commit format or PR won't be accepted
+This projects uses [commitlint](https://commitlint.js.org/) with Angular configuration so be sure to use standard commit format or PR won't be accepted
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -84,7 +84,7 @@ This projects uses [commitizen](https://github.com/commitizen/cz-cli) so be sure
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
 
 <!-- CONTACT -->
 
