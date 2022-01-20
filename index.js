@@ -31,15 +31,14 @@ const DEFAULT_OPTS = {
 };
 
 /**
- * @param {number} timeout
- * @param {ProcessEvents} events
- * @param {Array<() => any>} callbacks
+ * @param {Array<() => any>} [callbacks=[]]
+ * @param {FineOptions} [opts={}]
  */
-function validateParameters(timeout, events, callbacks) {
-  if (typeof timeout !== "number") {
+function validateParameters(callbacks = [], opts = {}) {
+  if (typeof opts.timeout !== "number") {
     throw new TypeError("timeout parameter must be number");
   }
-  if (!Array.isArray(events)) {
+  if (!Array.isArray(opts.events)) {
     throw new TypeError("events parameter must be an array of strings");
   }
 
@@ -53,18 +52,15 @@ function validateParameters(timeout, events, callbacks) {
     });
   }
 }
-exports.validateParameters = validateParameters;
 
 /**
- *
- *
  * @param {Array<() => any>} [callbacks=[]]
  * @param {FineOptions} [opts={}]
  */
 function fine(callbacks = [], opts = {}) {
   const options = Object.assign({}, DEFAULT_OPTS, opts);
 
-  validateParameters(options.timeout, options.events, callbacks);
+  validateParameters(callbacks, options);
 
   for (const event of options.events) {
     if (!options.allowDuplicateHandlers && process.listenerCount(event) > 0) {
@@ -94,4 +90,10 @@ function fine(callbacks = [], opts = {}) {
   }
 }
 
-module.exports = fine;
+if (process.env.NODE_ENV === "test") {
+  exports.DEFAULT_OPTS = DEFAULT_OPTS;
+  exports.validateParameters = validateParameters;
+  exports.fine = fine;
+} else {
+  module.exports = fine;
+}

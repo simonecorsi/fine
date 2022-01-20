@@ -54,7 +54,7 @@
     "npm": "7.18.1"
   },
   "scripts": {
-    "test": "nyc --reporter=lcov  --reporter=text-summary tap",
+    "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text-summary tap",
     "prepare": "node prepare.js || echo 'Skipping prepare'",
     "types": "tsc --allowJs -d --emitDeclarationOnly index.js"
   }
