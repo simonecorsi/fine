@@ -38,12 +38,23 @@ npm i @scdev/fine
 ## Usage
 
 ```js
+// Example
+const http = require("http");
+const { promisify } = require("util");
 const fine = require("@scdev/fine");
+
+const server = http.createServer(/* your handler */);
+
 fine(
   [
-    redis.disconnect,
+    // Tip: you can wait that all connection are closed
+    promisify(server.close),
+    // or you can just sto accepting new one and continue closing other callbacks
+    server.close,
+
     async () => {
-      await db.disconnect(); // Throws will be NOOP-ed
+      // Throws will be NOOP-ed
+      await db.disconnect();
     },
   ],
   {
@@ -51,6 +62,8 @@ fine(
     events: ["SIGINT", "SIGTERM", "uncaughtException", "unhandledRejection"],
   }
 );
+
+// ...
 ```
 
 ### Arguments
