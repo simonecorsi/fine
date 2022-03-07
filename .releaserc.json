@@ -1,5 +1,8 @@
 {
-  "branches": ["main"],
+  "branches": [
+    { "name": "main" },
+    { "name": "next", "channel": "next", "prerelease": true }
+  ],
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
@@ -12,6 +15,12 @@
       }
     ],
     "@semantic-release/github",
-    "@saithodev/semantic-release-backmerge"
+    [
+      "@saithodev/semantic-release-backmerge",
+      {
+        "branches": [{ "from": "main", "to": "next" }],
+        "backmergeStrategy": "rebase"
+      }
+    ]
   ]
 }
