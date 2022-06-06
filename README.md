@@ -12,6 +12,10 @@ Zero dependency and opinionated package that gracefully shutdown Node.js applica
 
 It provides extendability by taking an array of callbacks that will be executed serially to allow closing user-defined resources, eg: a database connection, drain streams, etc; before timeout exits the main process.
 
+## ESM
+
+This package now exports both `ESM` and `CommonJS`. If, for some reason, you really really need only the CommonJS version refer to `v1.4.0`.
+
 ## Table of contents
 
 <!-- toc -->
