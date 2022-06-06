@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/simonecorsi/fine/compare/v1.4.0...v2.0.0) (2022-06-06)
+
+
+### Features
+
+* exports both esm and commonjs ([6056596](https://github.com/simonecorsi/fine/commit/6056596521f4dc55e8f6762d20467a4a21db9ddb))
+
+
+### BREAKING CHANGES
+
+* ESM package with CommonJS export
+
 # [1.4.0](https://github.com/simonecorsi/fine/compare/v1.3.0...v1.4.0) (2022-01-18)
 
 
