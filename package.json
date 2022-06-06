@@ -2,8 +2,14 @@
   "name": "@scdev/fine",
   "version": "1.4.0",
   "description": "Graceful shutdown Node.js application, this module helps handling process exit signals and closing pending jobs",
-  "main": "index.js",
   "types": "index.d.ts",
+  "type": "module",
+  "exports": {
+    "require": "./src/index.cjs",
+    "default": "./src/index.mjs",
+    "node": "./src/index.mjs",
+    "import": "./src/index.mjs"
+  },
   "bugs": {
     "url": "https://github.com/simonecorsi/fine/issues"
   },
@@ -44,18 +50,15 @@
     "is-ci": "^3.0.0",
     "lint-staged": "^12.1.7",
     "markdown-toc": "^1.2.0",
-    "nyc": "^15.1.0",
     "prettier": "^2.5.1",
-    "tap": "^16.0.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.7.3"
   },
   "volta": {
-    "node": "14.17.1",
+    "node": "16.15.1",
     "npm": "7.18.1"
   },
   "scripts": {
-    "test": "nyc --reporter=lcov  --reporter=text-summary tap",
     "prepare": "node prepare.js || echo 'Skipping prepare'",
-    "types": "tsc --allowJs -d --emitDeclarationOnly index.js"
+    "types": "tsc --allowJs -d --emitDeclarationOnly src/index.cjs"
   }
 }

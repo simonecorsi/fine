@@ -94,4 +94,4 @@ function fine(callbacks = [], opts = {}) {
   }
 }
 
-module.exports = fine;
+exports.fine = fine;
