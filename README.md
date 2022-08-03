@@ -4,8 +4,7 @@
 
 <!-- ![tests](https://github.com/simonecorsi/fine/workflows/test/badge.svg) -->
 
-> "Fine" means "End" in Italian.  
-> [fì-ne] Cessazione definitiva, punto estremo, nello spazio e nel tempo di qualcosa.  
+> "Fine" [fì-ne] - means "End" in Italian.  
 > The point in time when an action, event, or phenomenon ceases or is completed; the conclusion. 
 
 ## About
