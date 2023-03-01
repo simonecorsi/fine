@@ -1,7 +1,7 @@
 "use strict";
 
 const {
-  types: { isPromise },
+  types: { isAsyncFunction },
 } = require("util");
 
 const NOOP = () => undefined;
@@ -60,8 +60,9 @@ exports.validateParameters = validateParameters;
  *
  * @param {Array<() => any>} [callbacks=[]]
  * @param {FineOptions} [opts={}]
+ * @param {typeof console.log} [logFnc=process.stdout.write] Loggin function, default to console.log, if no function log is suppressed
  */
-function fine(callbacks = [], opts = {}) {
+function fine(callbacks = [], opts = {}, logFnc = process.stdout.write) {
   const options = Object.assign({}, DEFAULT_OPTS, opts);
 
   validateParameters(options.timeout, options.events, callbacks);
@@ -71,7 +72,7 @@ function fine(callbacks = [], opts = {}) {
       throw new Error(`A ${event} handler is already registered`);
     }
 
-    process.once(event, () => {
+    process.once(event, function () {
       const code = event.match("^SIG") ? 0 : 1;
 
       const t = setTimeout(() => {
@@ -80,15 +81,21 @@ function fine(callbacks = [], opts = {}) {
 
       if (options.unref) t.unref();
 
-      process.stdout.write(`[${event}] exiting with code ${code}\n`);
+      if (typeof logFnc === "function") {
+        logFnc(`[${event}] exiting with code ${code}\n`);
+      }
+
       for (const cb of callbacks) {
         try {
-          if (typeof cb === "function") {
-            const p = cb();
-            if (isPromise(p)) p.catch(NOOP);
+          // is ugly but avoids branching the promise
+          if (isAsyncFunction(cb)) {
+            cb(event, ...arguments).catch(NOOP);
+          } else {
+            cb(event, ...arguments);
           }
           // eslint-disable-next-line no-empty
-        } catch (_) {}
+        } finally {
+        }
       }
     });
   }
