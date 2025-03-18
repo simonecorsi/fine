@@ -33,8 +33,8 @@
   "author": "Simone Corsi <simonecorsi.dev@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^19.0.2",
-    "@commitlint/config-conventional": "^19.0.0",
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/config-conventional": "^19.8.0",
     "@saithodev/semantic-release-backmerge": "^3.1.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^13.0.0",
@@ -42,23 +42,17 @@
     "@semantic-release/github": "^11.0.0",
     "@semantic-release/npm": "^12.0.0",
     "@semantic-release/release-notes-generator": "^14.0.0",
-    "eslint": "^9.0.0",
-    "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "husky": "^9.0.2",
-    "is-ci": "^4.1.0",
-    "lint-staged": "^15.0.1",
+    "commitlint": "^19.8.0",
+    "lefthook": "^1.11.3",
     "markdown-toc": "^1.2.0",
-    "prettier": "^3.0.0",
     "typescript": "^5.0.4"
   },
   "volta": {
-    "node": "16.15.1",
-    "npm": "7.18.1"
+    "node": "22.14.0",
+    "npm": "11.2.0"
   },
   "scripts": {
-    "prepare": "node prepare.js || echo 'Skipping prepare'",
+    "prepare": "node prepare.mjs || echo 'Skipping prepare'",
     "types": "tsc --allowJs -d --emitDeclarationOnly src/index.cjs"
   }
 }

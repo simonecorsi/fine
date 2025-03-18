@@ -1,0 +1,21 @@
+# lefthook.yml
+pre-commit:
+  skip: CI
+  commands:
+    lint:
+      glob: '**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}'
+      run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+
+    markdown-toc:
+      glob: '**/*.md'
+      run: |
+        for file in {staged_files}; do
+          npx markdown-toc -i "$file"
+        done
+
+commit-msg:
+  skip: CI
+  commands:
+    lint-commit:
+      run: npx --no-install commitlint --extends @commitlint/config-conventional --edit "$1"
