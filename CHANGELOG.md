@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/simonecorsi/fine/compare/v2.0.0...v2.1.0) (2025-03-19)
+
+
+### Features
+
+* user defined logger ([89df706](https://github.com/simonecorsi/fine/commit/89df706d6de053ea4f2658ad7704ce02ba3dc102))
+
 # [2.0.0](https://github.com/simonecorsi/fine/compare/v1.4.0...v2.0.0) (2022-06-06)
 
 
