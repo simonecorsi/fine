@@ -1,6 +1,6 @@
 {
   "name": "@scdev/fine",
-  "version": "2.1.0",
+  "version": "3.0.0-0",
   "description": "Graceful shutdown Node.js application, this module helps handling process exit signals and closing pending jobs",
   "type": "module",
   "types": "./src/index.d.cts",
