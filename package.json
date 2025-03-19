@@ -5,16 +5,14 @@
   "type": "module",
   "types": "./src/index.d.cts",
   "exports": {
-    "require": "./src/index.cjs",
-    "default": "./src/index.mjs",
-    "node": "./src/index.mjs",
-    "import": "./src/index.mjs"
+    ".": "./src/index.js"
   },
   "bugs": {
     "url": "https://github.com/simonecorsi/fine/issues"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=22",
+    "typescript": ">=5.8"
   },
   "keywords": [
     "nodejs",
@@ -34,6 +32,7 @@
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@saithodev/semantic-release-backmerge": "^3.1.0",
     "@semantic-release/changelog": "^6.0.1",
@@ -42,10 +41,9 @@
     "@semantic-release/github": "^11.0.0",
     "@semantic-release/npm": "^12.0.0",
     "@semantic-release/release-notes-generator": "^14.0.0",
-    "commitlint": "^19.8.0",
     "lefthook": "^1.11.3",
     "markdown-toc": "^1.2.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.8.2"
   },
   "volta": {
     "node": "22.14.0",
@@ -53,6 +51,6 @@
   },
   "scripts": {
     "prepare": "node prepare.mjs || echo 'Skipping prepare'",
-    "types": "tsc --allowJs -d --emitDeclarationOnly src/index.cjs"
+    "types": "tsc --allowJs -d --emitDeclarationOnly --module nodenext src/index.js"
   }
 }

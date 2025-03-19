@@ -1,9 +1,6 @@
-"use strict";
+import { types } from "node:util";
 
-const {
-  types: { isAsyncFunction },
-} = require("util");
-
+const { isAsyncFunction } = types;
 const NOOP = () => undefined;
 
 /**
@@ -33,7 +30,7 @@ const DEFAULT_OPTS = {
 /**
  * @param {number} timeout
  * @param {ProcessEvents} events
- * @param {Array<() => any>} callbacks
+ * @param {Array<() => unknown>} callbacks
  */
 function validateParameters(timeout, events, callbacks) {
   if (typeof timeout !== "number") {
@@ -45,24 +42,27 @@ function validateParameters(timeout, events, callbacks) {
 
   if (!Array.isArray(callbacks)) {
     throw new TypeError("callbacks parameter must be an array of functions");
-  } else {
-    callbacks.map((cb) => {
-      if (typeof cb !== "function") {
-        throw new TypeError("callback must be a function");
-      }
-    });
   }
+
+  callbacks.map((cb) => {
+    if (typeof cb !== "function") {
+      throw new TypeError("callback must be a function");
+    }
+  });
 }
-exports.validateParameters = validateParameters;
 
 /**
  *
  *
- * @param {Array<() => any>} [callbacks=[]]
+ * @param {Array<() => unknown>} [callbacks=[]]
  * @param {FineOptions} [opts={}]
  * @param {typeof console.log} [logFnc=process.stdout.write] Loggin function, default to console.log, if no function log is suppressed
  */
-function fine(callbacks = [], opts = {}, logFnc = process.stdout.write) {
+export default function fine(
+  callbacks = [],
+  opts = {},
+  logFnc = process.stdout.write,
+) {
   const options = Object.assign({}, DEFAULT_OPTS, opts);
 
   validateParameters(options.timeout, options.events, callbacks);
@@ -72,7 +72,7 @@ function fine(callbacks = [], opts = {}, logFnc = process.stdout.write) {
       throw new Error(`A ${event} handler is already registered`);
     }
 
-    process.once(event, function () {
+    process.once(event, () => {
       const code = event.match("^SIG") ? 0 : 1;
 
       const t = setTimeout(() => {
@@ -89,16 +89,14 @@ function fine(callbacks = [], opts = {}, logFnc = process.stdout.write) {
         try {
           // is ugly but avoids branching the promise
           if (isAsyncFunction(cb)) {
+            // biome-ignore lint/style/noArguments: its ok I want them all
             cb(event, ...arguments).catch(NOOP);
           } else {
+            // biome-ignore lint/style/noArguments: its ok I want them all
             cb(event, ...arguments);
           }
-          // eslint-disable-next-line no-empty
-        } finally {
-        }
+        } catch {}
       }
     });
   }
 }
-
-exports.fine = fine;
