@@ -11,7 +11,7 @@ pre-commit:
       glob: '**/*.md'
       run: |
         for file in {staged_files}; do
-          npx markdown-toc -i "$file"
+          npx markdown-toc --bullets "-" -i "$file"
         done
 
 commit-msg:

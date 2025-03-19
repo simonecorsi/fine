@@ -5,7 +5,7 @@
 <!-- ![tests](https://github.com/simonecorsi/fine/workflows/test/badge.svg) -->
 
 > "Fine" [fì-ne] - means "End" in Italian.  
-> The point in time when an action, event, or phenomenon ceases or is completed; the conclusion. 
+> The point in time when an action, event, or phenomenon ceases or is completed; the conclusion.
 
 ## About
 
