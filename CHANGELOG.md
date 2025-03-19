@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/simonecorsi/fine/compare/v2.1.0...v3.0.0) (2025-03-19)
+
+
+### Features
+
+* esm ([bbc14d0](https://github.com/simonecorsi/fine/commit/bbc14d0d1ba930d1e7e32ee0dea94b1847e384dc))
+
+
+### BREAKING CHANGES
+
+* full esm package
+
 # [2.1.0](https://github.com/simonecorsi/fine/compare/v2.0.0...v2.1.0) (2025-03-19)
 
 
