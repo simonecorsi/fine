@@ -42,7 +42,7 @@
     "@semantic-release/github": "^12.0.0",
     "@semantic-release/npm": "^13.0.0",
     "@semantic-release/release-notes-generator": "^14.0.0",
-    "lefthook": "^1.11.3",
+    "lefthook": "^2.0.0",
     "typescript": "^5.8.2"
   },
   "volta": {
