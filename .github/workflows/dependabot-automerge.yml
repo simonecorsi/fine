@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: lts/*
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.GH_TOKEN }}
           persist-credentials: false
