@@ -43,7 +43,7 @@
     "@semantic-release/npm": "^13.0.0",
     "@semantic-release/release-notes-generator": "^14.0.0",
     "lefthook": "^2.0.0",
-    "typescript": "^5.8.2"
+    "typescript": "^6.0.2"
   },
   "volta": {
     "node": "22.14.0",
